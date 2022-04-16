@@ -1,0 +1,54 @@
+# Persistent Volume . 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: labpv
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  hostPath:
+    path: /mydata
+
+
+---
+# Peresistent volume claim. 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: labpvc
+spec:
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+
+---
+# Pod.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mynginx
+  labels:
+    name: mynginx
+spec:
+  containers:
+  - name: myapp
+    image: nginx:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    volumeMounts:
+      - mountPath: /var/www
+        name: myvolume
+  volumes: 
+    - name: myvolume      
+      persistentVolumeClaim:
+        claimName: labpvc

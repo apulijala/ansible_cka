@@ -1,0 +1,55 @@
+# Persistent Volume 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistentvolumetough
+spec:
+  capacity:
+    storage: 2Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: manual
+  hostPath:
+    path: /pvpath
+---
+# Persistent Volume Claim. 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvcclaimtough
+  namespace: myvol
+spec:
+  resources:
+    requests:
+      storage: 1Gi
+  volumeMode: Filesystem
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+---
+# Pod 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: newpod
+  namespace: myvol
+  labels:
+    name: newpod
+    type: pvcmount
+spec:
+  containers:
+  - name: newnginxpod
+    image: nginx:latest
+    volumeMounts:
+      - name: "myvolume"
+        mountPath: "/myvolume"
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  volumes: 
+   - name: "myvolume"
+     persistentVolumeClaim: 
+      claimName: pvcclaimtough

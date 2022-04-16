@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sharedvolume
+spec:
+  containers:
+  - name: centos1
+    image: centos:7
+    volumeMounts:
+      - name : "test"
+        mountPath: /centos1
+    command:
+      - sleep 3600
+    resources:
+       limits:
+        memory: "128Mi"
+        cpu: "500m"
+  - name : centos2
+    image: centos:7 
+    volumeMounts: 
+      - name: "test"
+        mountPath: /centos2
+    command: 
+     - sleep 3600
+    resources:
+      limits:
+        memory: "256Mi"
+        cpu: "600m"
+  volumes:
+    - name: "test"
+      emptyDir: {}
+        

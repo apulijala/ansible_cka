@@ -1,0 +1,62 @@
+# Persistent Volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mydemovolume
+  labels:
+    name : mydemovolume
+    type:  local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi  # will not work for B 2GiB
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mylab"
+
+---
+# Persistent Volume claim. 
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mypvc
+  labels: 
+    name: mypvc
+    type: local
+spec:
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+
+---
+# Then finally mount it on a Pod. 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mynginx
+  labels: 
+    name: mynginx
+    type: local
+spec:
+  containers:
+  - name: myapp
+    image: nginx:latest
+    volumeMounts:
+      - name : labvolume
+        mountPath: "/var/www"
+    resources:
+      limits:
+        memory: "256Mi"
+        cpu: "500m"
+  volumes: 
+  - name: labvolume
+    persistentVolumeClaim: 
+      claimName: mypvc
+
+
