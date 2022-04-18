@@ -1,0 +1,136 @@
+
+
+
+
+??\\
+10+14
+10. Find the list of backslash escaped characters in the manual of bash. Add the time to your
+10. Issue the cal command. Display a calendar of 1582 and 1752. Notice anything special ?
+10. List (with ls) all files that have exactly five characters.
+11. List (with ls) all files that start with f or F and end with 3 or A.
+12. List (with ls) all files that start with f have i or R as second character and end in a number.
+12. What is the location of the cat and the passwd commands ?
+131commands and arguments
+13. Explain the difference between the following commands:
+13. List all files that do not start with the letter F.
+14. Copy the value of $LANG to $MyLANG.
+14. Explain the difference between the following commands:
+15. Display A B C with two spaces between B and C.
+15. Show the influence of $LANG in listing A-Z or a-z ranges.
+16. You receive information that one of your servers was cracked, the cracker probably
+17. Is there another command besides cd to change directories ?
+17. Use echo to display the following exactly:
+18. Use one echo command to display three words on three lines.
+1. Remove your city alias.
+1. Start the vimtutor and do some or all of the exercises. You might need to run aptitude
+200 .odf files in /data ? How about when there are 2 million .odf files ?
+=24
+2. Explain the difference between these two statements. Will they both work when there are
+2. Put a sorted list of all logged on users in onlineusers.txt.
+2. What 3 key sequence in command mode will duplicate the current line.
+3. Execute the pwd command twice. (remember 0.)
+3. Make a list of all filenames in /etc that contain the string conf in their filename.
+3. What 3 key sequence in command mode will switch two lines' place (line five becomes
+3. When listing all shell options, which character represents the noclobber option ?
+3. Write a find command that finds all files created after January 30th 2010.
+4+4
+4. Deactivate the noclobber option.
+4. Execute cd /var and ls in an embedded shell.
+4. Execute ls after cd /etc, but only if cd /etc did not error.
+4. Issue the long echo from question 1 again, using the line numbers you received from the
+4. Make a sorted list of all files in /etc that contain the case insensitive string conf in their
+4. What 2 key sequence in command mode will switch a character's place with the next one.
+4. Write a find command that finds all *.odf files created in September 2009.
+5. Count the number of *.conf files in /etc and all its subdirs.
+5. Create the variable embvar in an embedded shell and echo it. Does the variable exist in
+5. Execute cd /etc after cd etc, but only if cd etc fails.
+5. How many commands can be kept in memory for your current shell session ?
+5. List (with ls) all files starting with file and ending in a number.
+5. Look at the output of /sbin/ifconfig. Write a line that displays only ip address and the
+5. Make sure you have two shells open on the same computer. Create an empty tailing.txt
+5. vi can understand macro's. A macro can be recorded with q followed by the name of
+6. Copy /etc/passwd to your ~/passwd. Open the last one in vi and press Ctrl v. Use the arrow
+6. Create a file that contains the names of five people. Use cat and output redirection to
+6. Destroy your answer variable.
+6. Echo it worked when touch test42 works, and echo it failed when the touch failed. All
+6. Explain what "set -x" does. Can this be useful ?
+6. Here are two commands that do the same thing: copy *.odf files to /backup/ . What would
+6. List (with ls) all files starting with file and ending with a letter
+6. Where are these commands stored when exiting the shell ?
+6. Write a line that removes all non-letters from a stream.
+7. Create a file called loctest.txt. Can you find this file with locate ? Why not ? How do
+7. Create two variables, and export one of them.
+7. Execute sleep 6, what is this command doing ?
+7. How many commands can be written to the history file when exiting your current shell
+7. List (with ls) all files starting with File and having a digit as fifth character.
+7. What does dwwP do when you are at the beginning of a word in a sentence ?
+7. Write a line that receives a text file, and outputs all words on a separate line.
+=8
+8. Display a long listing (ls -l) of the passwd command using the which command inside
+8. Display the exported variable in an interactive child shell.
+8. Execute sleep 200 in background (do not wait for it to finish).
+8. List (with ls) all files starting with File and having a digit as fifth character and nothing
+8. Make sure your current bash shell remembers the next 5000 commands you type.
+8. Use find and -exec to rename all .htm files to .html.
+8. Write a spell checker on the command line. (There may be a dictionary in /usr/share/
+9. Create a variable, give it the value 'Dumb', create another variable with value 'do'. Use
+9. Issue the date command. Now display the date in YYYY/MM/DD format.
+9. List (with ls) all files starting with a letter and ending in a number.
+9. Open more than one console (by press Ctrl-shift-t in gnome-terminal, or by opening an
+9. Write a command line that executes rm file55. Your command line should print 'success'
+an embedded shell.
+be a reason to replace the first command with the second ? Again, this is an important
+/bin/echo
+command in question 3.
+cp -r /data/*.odf /backup/
+create the file and use a here document to end the input.
+dict/ .)
+echo
+echo and the two variables to echo Dumbledore.
+echo Hello
+echo -n Hello
+else.
+'Escape Key' qa yyp 'Ctrl a' q 5@a (Ctrl a will increase the number with one).
+. Explain the difference between these two commands. This question is very important. If
+extra putty.exe in MS Windows) with the same user account. When is command history
+filename.
+file. Then type tail -f tailing.txt. Use the second shell to append a line of text to that file.
+find /data -name "*.odf" > data_odf.txt
+find /data -name "*.odf" -exec cp {} /backup/ \;
+find /data -name "*.txt"
+find /data -name *.txt
+find /data/*.odf > data_odf.txt
+Find two solutions with single quotes, two with double quotes and one without quotes (and
+First; echo
+following output:
+if file55 is removed, and print 'failed' if there was a problem.
+in /bin/ .
+\ ." (including all quotes)
+install vim on xubuntu.
+in the shell trying to execute the first file as a command.
+keys to select a Visual Block, you can copy this with y or delete it with d. Try pasting it.
+Last
+line six and line six becomes line five).
+line so that the total output is FirstMiddleLast.
+ls ? How can you list the files in the current directory with echo ?
+Middle; echo
+on one command line as a normal user (not root). Test this line in your home directory and
+(optional)10. Use echo to display "Hello World with strange' characters \ * [ } ~ \
+(optional)16. Complete the following command (do not use spaces) to display exactly the
+(optional)7. Given the following screenshot, add exactly four characters to that command
+[paul@RHEL4b ~]$ echo
+PS1 prompt.
+Put a sorted list of all bash users in bashusers.txt.
+question.
+replaced the ls command. You know that the echo command is safe to use. Can echo replace
+say thank you to René and Darioush from Google for this extra).
+session ?
+subnet mask.
+The echo command is only needed to show the result of the ls command. Omitting will result
+the macro. So qa will record the macro named a. Pressing q again will end the recording.
+Verify that the first shell displays this line.
+written to the history file ?
+You can recall the macro with @ followed by the name of the macro. Try this example: i 1
+you don't know the answer, then look back at the shell chapter.
+you make locate find this file ?
+your current shell now ?

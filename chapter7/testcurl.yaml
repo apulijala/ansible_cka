@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: testcurl
+  name: testcurl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testcurl
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: testcurl
+    spec:
+      containers:
+      - image: centos:7
+        name: centos
+        command: 
+          - sleep 
+          - "3600"
+        resources: {}
+status: {}

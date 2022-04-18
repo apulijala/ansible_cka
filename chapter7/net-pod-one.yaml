@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podnetworking
+  labels:
+    name: podnetworking
+spec:
+  containers:
+  - name: busy1
+    image: busybox
+    command: 
+      - sleep 
+      - "3600"
+    resources:
+      limits:
+        memory: "512Mi"
+        cpu: "500m"
+
+  - name: busy2
+    image: busybox
+    command: 
+      - sleep 
+      - "3600"
+    resources:
+      limits:
+        memory: "512Mi"
+        cpu: "500m"
